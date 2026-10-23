@@ -1,0 +1,63 @@
+# ---------- Resource-Pack (Low Fire / Low Shield / Low Totem) ----------
+# Diese Effekte sind Texturen und laufen auf dem Client. Das Plugin schickt
+# nur das Pack an die Spieler. Pack irgendwo hosten (z. B. GitHub Release),
+# direkte Download-URL + SHA-1 eintragen.
+resourcepack:
+  enabled: false
+  url: ""
+  sha1: ""
+  required: false
+  prompt: "<gold>Low Fire, Low Shield & Low Totem Pack"
+
+# ---------- KI-Chatbot ----------
+ai:
+  api-key: ""                    # Anthropic API-Key (console.anthropic.com)
+  model: "claude-sonnet-4-6"
+  max-tokens: 300
+  cooldown-seconds: 3
+  history-size: 10               # wie viele Nachrichten pro Spieler gemerkt werden
+  system-prompt: "Du bist ein hilfreicher Assistent auf einem Minecraft-Server. Antworte kurz (maximal 3 Sätze), freundlich, ohne Markdown und in der Sprache des Spielers."
+
+# ---------- Custom Items & Rezepte ----------
+# Zutaten sind normale Minecraft-Materialien. Rezepte: entweder "shape" + "ingredients"
+# (geformt) oder "shapeless" (Liste, ungeformt).
+items:
+  blitzschwert:
+    material: DIAMOND_SWORD
+    name: "<gold><bold>Blitzschwert"
+    lore:
+      - "<gray>Ein besonderes Schwert"
+    custom-model-data: 1001
+    unbreakable: true
+    enchants:
+      sharpness: 5
+    recipe:
+      shape:
+        - " D "
+        - " D "
+        - " S "
+      ingredients:
+        D: DIAMOND
+        S: STICK
+
+  zombie_ei:
+    material: ZOMBIE_SPAWN_EGG
+    name: "<green>Zombie-Ei"
+    recipe:
+      shapeless:
+        - ROTTEN_FLESH
+        - ROTTEN_FLESH
+        - ROTTEN_FLESH
+        - EGG
+
+  creeper_ei:
+    material: CREEPER_SPAWN_EGG
+    name: "<dark_green>Creeper-Ei"
+    recipe:
+      shape:
+        - "GGG"
+        - "GEG"
+        - "GGG"
+      ingredients:
+        G: GUNPOWDER
+        E: EGG

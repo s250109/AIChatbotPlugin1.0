@@ -1,0 +1,28 @@
+name: MeinPlugin
+version: '${version}'
+main: de.meinplugin.MeinPlugin
+api-version: '1.21'
+description: Custom Items, Rezepte, Resource-Pack und KI-Chat
+commands:
+  ai:
+    description: KI-Chatbot (ohne Text = Chat-Modus an/aus, "reset" = Verlauf löschen)
+    usage: /ai [frage | reset]
+    permission: meinplugin.ai
+  mpgive:
+    description: Gibt ein Custom-Item
+    usage: /mpgive <id> [spieler]
+    permission: meinplugin.give
+  mpreload:
+    description: Lädt die Config neu
+    usage: /mpreload
+    permission: meinplugin.reload
+permissions:
+  meinplugin.ai:
+    description: Erlaubt /ai
+    default: true
+  meinplugin.give:
+    description: Erlaubt /mpgive
+    default: op
+  meinplugin.reload:
+    description: Erlaubt /mpreload
+    default: op
